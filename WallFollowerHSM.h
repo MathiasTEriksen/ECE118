@@ -39,9 +39,8 @@
 #define MOVE_FWD_TICKS 500
 
 #define SHOOT_TIMER 9
-#define SHOOT_TICKS 1000
+#define SHOOT_TICKS 3000
 
-extern unsigned char Side;
 /*******************************************************************************
  * PUBLIC TYPEDEFS                                                             *
  ******************************************************************************/

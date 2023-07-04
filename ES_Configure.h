@@ -56,11 +56,17 @@ typedef enum {
     BACK_TAPE_TRIPPED,
     BACK_TAPE_UNTRIPPED,  
             
-    LEFT_WALL_INRANGE,
-    LEFT_WALL_FAR,
+    BACK_LEFT_WALL_INRANGE,
+    BACK_LEFT_WALL_FAR,
             
-    RIGHT_WALL_FAR,
-    RIGHT_WALL_INRANGE,
+    BACK_RIGHT_WALL_FAR, //18
+    BACK_RIGHT_WALL_INRANGE, //19
+            
+    FRONT_LEFT_WALL_INRANGE,
+    FRONT_LEFT_WALL_FAR,
+            
+    FRONT_RIGHT_WALL_FAR,
+    FRONT_RIGHT_WALL_INRANGE,
             
     BUMPER_BUMPED,   
             
@@ -90,6 +96,26 @@ static const char *EventNames[] = {
 	"ES_TIMERSTOPPED",
 	"BATTERY_CONNECTED",
 	"BATTERY_DISCONNECTED",
+	"FRONT_TAPE_TRIPPED",
+	"FRONT_TAPE_UNTRIPPED",
+	"BACK_TAPE_TRIPPED",
+	"BACK_TAPE_UNTRIPPED",
+	"BACK_LEFT_WALL_INRANGE",
+	"BACK_LEFT_WALL_FAR",
+	"BACK_RIGHT_WALL_FAR",
+	"BACK_RIGHT_WALL_INRANGE",
+    "FRONT_LEFT_WALL_INRANGE",
+	"FRONT_LEFT_WALL_FAR",
+	"FRONT_RIGHT_WALL_FAR",
+	"FRONT_RIGHT_WALL_INRANGE",
+	"BUMPER_BUMPED",
+	"ON_WIRE",
+	"OFF_WIRE",
+	"BEACON_PRESENT",
+	"BEACON_ABSENT",
+	"SHOOTING_1PT_DONE",
+	"SHOOTING_2PT_DONE",
+	"SHOOTING_3PT_DONE",
 	"NUMBEROFEVENTS",
 };
 
@@ -102,29 +128,29 @@ static const char *EventNames[] = {
 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST CheckBumpers
+#define EVENT_CHECK_LIST //CheckTrackWire, CheckBumpers, CheckDigitalTape, CheckAnalogTape, CheckBeacon, CheckSide
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the
 // corresponding timer expires. All 16 must be defined. If you are not using
 // a timers, then you can use TIMER_UNUSED
 #define TIMER_UNUSED ((pPostFunc)0)
-#define TIMER0_RESP_FUNC PostTESTEventService
-#define TIMER1_RESP_FUNC TIMER_UNUSED
-#define TIMER2_RESP_FUNC TIMER_UNUSED
-#define TIMER3_RESP_FUNC TIMER_UNUSED
-#define TIMER4_RESP_FUNC TIMER_UNUSED
-#define TIMER5_RESP_FUNC TIMER_UNUSED
-#define TIMER6_RESP_FUNC TIMER_UNUSED
-#define TIMER7_RESP_FUNC TIMER_UNUSED
-#define TIMER8_RESP_FUNC TIMER_UNUSED
-#define TIMER9_RESP_FUNC TIMER_UNUSED
-#define TIMER10_RESP_FUNC TIMER_UNUSED
-#define TIMER11_RESP_FUNC TIMER_UNUSED
-#define TIMER12_RESP_FUNC TIMER_UNUSED
+#define TIMER0_RESP_FUNC PostBdayFSM
+#define TIMER1_RESP_FUNC PostBdayFSM
+#define TIMER2_RESP_FUNC PostBdayFSM
+#define TIMER3_RESP_FUNC PostBdayFSM
+#define TIMER4_RESP_FUNC PostBdayFSM
+#define TIMER5_RESP_FUNC PostBdayFSM
+#define TIMER6_RESP_FUNC PostBdayFSM
+#define TIMER7_RESP_FUNC PostBdayFSM
+#define TIMER8_RESP_FUNC PostBdayFSM
+#define TIMER9_RESP_FUNC PostBdayFSM
+#define TIMER10_RESP_FUNC PostBdayFSM
+#define TIMER11_RESP_FUNC PostBdayFSM
+#define TIMER12_RESP_FUNC PostBdayFSM
 #define TIMER13_RESP_FUNC TIMER_UNUSED
 #define TIMER14_RESP_FUNC TIMER_UNUSED
-#define TIMER15_RESP_FUNC TIMER_UNUSED
+#define TIMER15_RESP_FUNC PostBdayFSM
 
 
 /****************************************************************************/
@@ -165,13 +191,13 @@ static const char *EventNames[] = {
 // These are the definitions for Service 1
 #if NUM_SERVICES > 1
 // the header file with the public function prototypes
-#define SERV_1_HEADER "TESTEventService.h"
+#define SERV_1_HEADER "BDayFSM.h"//"WallFollowerHSM.h" 
 // the name of the Init function
-#define SERV_1_INIT InitTESTEventService
+#define SERV_1_INIT InitBdayFSM
 // the name of the run function
-#define SERV_1_RUN RunTESTEventService
+#define SERV_1_RUN RunBdayFSM
 // How big should this services Queue be?
-#define SERV_1_QUEUE_SIZE 3
+#define SERV_1_QUEUE_SIZE 10
 #endif
 
 // These are the definitions for Service 2

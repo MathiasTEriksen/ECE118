@@ -56,6 +56,28 @@ int LeftWheelSpeed(int PWM);
  * @note Template made from Roach.c/h
  * @author Leo King 5/16/2023
  **/
+int RightFlyWheelSpeed(int PWM);
+
+/**
+ * @Function void LeftWheelSpeed(int PWM)
+ * @param PWM, a value ranging from -1000 to 1000
+ * @return TRUE or FALSE for success
+ * @brief Drives the left wheel forward when a positive value is inputted and 
+ * in reverse when a negative value is given.
+ * @note Template made from Roach.c/h
+ * @author Leo King 5/16/2023
+ **/
+int LeftFlyWheelSpeed(int PWM);
+
+/**
+ * @Function void LeftWheelSpeed(int PWM)
+ * @param PWM, a value ranging from -1000 to 1000
+ * @return TRUE or FALSE for success
+ * @brief Drives the right wheel forward when a positive value is inputted and 
+ * in reverse when a negative value is given.
+ * @note Template made from Roach.c/h
+ * @author Leo King 5/16/2023
+ **/
 int RightWheelSpeed(int PWM);
 
 #endif /* Motor_Driver_H */

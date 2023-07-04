@@ -113,15 +113,15 @@ int LeftWheelSpeed(int PWM) {
     }
     //Forward
     if (PWM >= 0) {                     
-        IO_PortsSetPortBits(PORTX, IN1);
-        IO_PortsClearPortBits(PORTX, IN2);
-        PWM_SetDutyCycle(Left_Wheel_PWM, PWM);
+        IO_PortsSetPortBits(PORTX, IN2);
+        IO_PortsClearPortBits(PORTX, IN1);
+        PWM_SetDutyCycle(Left_Wheel_PWM, ((925*PWM)/1000));
     }
     //Reverse
     else {
-        IO_PortsSetPortBits(PORTX, IN2);
-        IO_PortsClearPortBits(PORTX, IN1);
-        PWM_SetDutyCycle(Left_Wheel_PWM, -PWM);
+        IO_PortsSetPortBits(PORTX, IN1);
+        IO_PortsClearPortBits(PORTX, IN2);
+        PWM_SetDutyCycle(Left_Wheel_PWM, ((-925*PWM)/1000));
     }
     return TRUE;
 }
@@ -141,14 +141,14 @@ int RightWheelSpeed(int PWM) {
     }
     //Forward
     if (PWM >= 0) {                     
-        IO_PortsSetPortBits(PORTX, IN3);
-        IO_PortsClearPortBits(PORTX, IN4);
+        IO_PortsSetPortBits(PORTX, IN4);
+        IO_PortsClearPortBits(PORTX, IN3);
         PWM_SetDutyCycle(Right_Wheel_PWM, PWM);
     }
     //Reverse
     else {
-        IO_PortsSetPortBits(PORTX, IN4);
-        IO_PortsClearPortBits(PORTX, IN3);
+        IO_PortsSetPortBits(PORTX, IN3);
+        IO_PortsClearPortBits(PORTX, IN4);
         PWM_SetDutyCycle(Right_Wheel_PWM, -PWM);
     }
     return TRUE;
@@ -199,6 +199,16 @@ int RightFlyWheelSpeed(int PWM) {
         PWM_SetDutyCycle(Right_FlyWheel_PWM, -PWM);
     }
     return TRUE;
+}
+
+void TurnLeft(int PWM) {
+    RightWheelSpeed(PWM);
+    LeftWheelSpeed(-PWM);
+}
+
+void TurnRight(int PWM) {
+    RightWheelSpeed(-PWM);
+    LeftWheelSpeed(PWM);
 }
 
 #ifdef MotorTests

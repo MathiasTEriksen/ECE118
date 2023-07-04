@@ -33,10 +33,12 @@
       <itemPath>BumperSensor.h</itemPath>
       <itemPath>TrackWire.h</itemPath>
       <itemPath>Beacon.h</itemPath>
-      <itemPath>BdayFSM.h</itemPath>
       <itemPath>OnePointerSubHSM.h</itemPath>
       <itemPath>TwoPointerSubHSM.h</itemPath>
       <itemPath>ThreePointerSubHSM.h</itemPath>
+      <itemPath>OPBSubHSM.h</itemPath>
+      <itemPath>WallFollowerHSM.h</itemPath>
+      <itemPath>BDayFSM.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -69,10 +71,12 @@
       <itemPath>BumperSensor.c</itemPath>
       <itemPath>TrackWire.c</itemPath>
       <itemPath>Beacon.c</itemPath>
-      <itemPath>BDayFSM.c</itemPath>
       <itemPath>OnePointerSubHSM.c</itemPath>
       <itemPath>TwoPointerSubHSM.c</itemPath>
       <itemPath>ThreePointerSubHSM.c</itemPath>
+      <itemPath>OPBSubHSM.c</itemPath>
+      <itemPath>WallFollowerHSM.c</itemPath>
+      <itemPath>BDayFSM.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -94,7 +98,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -127,6 +131,22 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
+      <item path="BDayFSM.c" ex="false" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
@@ -201,7 +221,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="2048"/>
+        <property key="heap-size" value="4096"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -263,6 +283,22 @@
         <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
+      <item path="WallFollowerHSM.c" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

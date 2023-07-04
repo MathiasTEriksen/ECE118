@@ -31,7 +31,7 @@
 #include "ES_Framework.h"
 #include "BOARD.h"
 #include "BdayFSM.h"
-#include "TwoPointerSubHSM.h"
+#include "OnePointerSubHSM.h"
 #include "Servo.h"
 #include "Motor_Driver.h"
 #include "BCEventChecker.h"
@@ -39,27 +39,29 @@
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
 
-#define TURN_2PT_TIMER 4
-#define TURNL_2PT_TICKS 50
-#define TURNR_2PT_TICKS 50
+#define TURN_1PT_TIMER 2
+#define TURN_1PT_TICKS 200
+
+#define TURN_CONSTANT 100
 
 typedef enum {
     Init,
-    Move_Fwd,
-    Shooting,
-    Turn,
+    End,
+    Timeout,        
+    Find_Beacon,
+    Turn_To_Shoot,
     Turn_Back,        
-} TwoPointerSubHSMState_t;
+} OnePointerSubHSMState_t;
 
 static const char *StateNames[] = {
 	"Init",
 	"Move_Fwd",
-    "Shooting"
 	"Turn",
 	"Turn_Back",
 };
 
 //static unsigned char Side;
+static first_run = 0;
 /*******************************************************************************
  * PRIVATE FUNCTION PROTOTYPES                                                 *
  ******************************************************************************/
@@ -72,7 +74,7 @@ static const char *StateNames[] = {
 /* You will need MyPriority and the state variable; you may need others as well.
  * The type of state variable should match that of enum in header file. */
 
-static TwoPointerSubHSMState_t CurrentState = Init; // <- change name to match ENUM
+static OnePointerSubHSMState_t CurrentState = Init; // <- change name to match ENUM
 static uint8_t MyPriority;
 
 
@@ -90,10 +92,10 @@ static uint8_t MyPriority;
  *        to rename this to something appropriate.
  *        Returns TRUE if successful, FALSE otherwise
  * @author J. Edward Carryer, 2011.10.23 19:25 */
-uint8_t InitTwoPointerSubHSM(void)
+uint8_t InitOPBSubHSM(void)
 {
     CurrentState = Init;    
-    //Side = CheckSide();
+    Side = CheckSide();
 
     return TRUE;
 }
@@ -113,62 +115,94 @@ uint8_t InitTwoPointerSubHSM(void)
  *       not consumed as these need to pass pack to the higher level state machine.
  * @author J. Edward Carryer, 2011.10.23 19:25
  * @author Gabriel H Elkaim, 2011.10.23 19:25 */
-ES_Event RunTwoPointerSubHSM(ES_Event ThisEvent)
+ES_Event RunOPBSubHSM(ES_Event ThisEvent)
 {
- switch (CurrentState) {
+    static uint32_t LastTime;
+    static uint32_t CurrentTime;
+    static uint32_t NewTime;
+
+    switch (CurrentState) {
         case Init: // If current state is initial Psedudo State
-            CurrentState = Turn;
+            CurrentState = Timeout;
+            
             break;
 
-        case Turn: // in the first state, replace this with correct names
-            if (Side == LEFT){
-                LeftWheelSpeed(300);
-                RightWheelSpeed(0);
-                if (Analog_TapeRead_L() < 450){
-                    ES_Timer_InitTimer(TURN_2PT_TIMER, 10);   
-                    CurrentState = Shooting;
-                } else {
-                    ES_Timer_InitTimer(TURN_2PT_TIMER, TURNL_2PT_TICKS);   
-                    CurrentState = Shooting;
+        case Timeout: // in the first state, replace this with correct names
+            if (ThisEvent.EventType == ES_TIMEOUT){
+                if (ThisEvent.EventParam == MOVE_FWD_TIMER){
+                    LastTime = ES_Timer_GetTime();
+                    if (Side == RIGHT){
+                        LeftWheelSpeed(-300);
+                        RightWheelSpeed(300);
+                    } 
+                    else if (Side == LEFT){
+                        LeftWheelSpeed(300);
+                        RightWheelSpeed(-300);
+                    } 
+                    CurrentState = Find_Beacon;
                 }
-            } 
-            else if (Side == RIGHT){
-                LeftWheelSpeed(0);
-                RightWheelSpeed(300);
-                if (Analog_TapeRead_R() < 450){
-                    ES_Timer_InitTimer(TURN_2PT_TIMER, 10);
-                    CurrentState = Shooting;
-                } else {
-                    ES_Timer_InitTimer(TURN_2PT_TIMER, TURNL_2PT_TICKS);   
-                CurrentState = Shooting;
-                }
-            }  
-            
+            }
+            break;
+        case Find_Beacon:
+            if (ThisEvent.EventType == BEACON_PRESENT){
+                    CurrentState = Turn_To_Shoot;
+                    CurrentTime = ES_Timer_GetTime();
+                    NewTime = (CurrentTime - LastTime);
+                    //NewTime = (NewTime/2) + ((TURN_CONSTANT*NewTime)/NewTime);
+                    ES_Timer_InitTimer(TURN_1PT_TIMER, NewTime);
+
+                    if (Side == RIGHT){
+                        LeftWheelSpeed(0);
+                        RightWheelSpeed(0);
+                        LeftFlyWheelSpeed(-300);
+                        RightFlyWheelSpeed(-300);
+                    } 
+                    else if (Side == LEFT){
+                        LeftWheelSpeed(0);
+                        RightWheelSpeed(0);
+                        LeftFlyWheelSpeed(-300);
+                        RightFlyWheelSpeed(-300);
+                    }
+
+            }
             break;
             
-        case Shooting:
+        case Turn_To_Shoot:
             if (ThisEvent.EventType == ES_TIMEOUT){
-                if (ThisEvent.EventParam == TURN_2PT_TIMER){
+                if (ThisEvent.EventParam == TURN_1PT_TIMER){
                     LeftWheelSpeed(0);
                     RightWheelSpeed(0);
-                    ES_Timer_InitTimer(BALL_RELEASE_TIMER, 999);
-                    ES_Timer_InitTimer(SHOOT_TIMER, SHOOT_TICKS);
-                    Send_Ball();
-                    
+                    if (!first_run){
+                        ES_Timer_InitTimer(BALL_RELEASE_TIMER, BALL_RELEASE_TICKS - 100);
+                        ES_Timer_InitTimer(SHOOT_TIMER, SHOOT_TICKS);
+                        Send_Ball();
+                    }
+                    else {
+                        ES_Timer_InitTimer(BALL_RELEASE_TIMER, BALL_RELEASE_TICKS);
+                        ES_Timer_InitTimer(SHOOT_TIMER, SHOOT_TICKS);
+                        Send_Ball();
+                    }
                 } 
                 if (ThisEvent.EventParam == BALL_RELEASE_TIMER){
-                    //ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);
                     Stop_Ball();
-                    //ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);
                 }
                 if (ThisEvent.EventParam == SHOOT_TIMER){
-                    if (Side == RIGHT) {
-                        ES_Timer_InitTimer(TURN_2PT_TIMER, TURNR_2PT_TICKS+40); 
+                    if (Side == LEFT) {
+                        ES_Timer_InitTimer(TURN_1PT_TIMER, NewTime); 
                         CurrentState = Turn_Back;
+                        
                     }
-                    else if (Side == LEFT){
-                        ES_Timer_InitTimer(TURN_2PT_TIMER, TURNL_2PT_TICKS+40); 
+                    else {
+                        ES_Timer_InitTimer(TURN_1PT_TIMER, NewTime);
                         CurrentState = Turn_Back;
+                            if (Side == RIGHT){
+                            LeftWheelSpeed(300);
+                            RightWheelSpeed(-300);
+                            } 
+                            else if (Side == LEFT){
+                            LeftWheelSpeed(300);
+                            RightWheelSpeed(-300);
+                        }
                     }
                         
                 }
@@ -176,19 +210,20 @@ ES_Event RunTwoPointerSubHSM(ES_Event ThisEvent)
             }
             break;
         case Turn_Back:
-            if (Side == LEFT){
-                LeftWheelSpeed(-300);
-                RightWheelSpeed(0);
-            } 
-            else if (Side == RIGHT){
-                LeftWheelSpeed(0);
-                RightWheelSpeed(-300);
-            }
-            
+//            if (Side == RIGHT){
+//                        LeftWheelSpeed(-400);
+//                        RightWheelSpeed(400);
+//                    } 
+//                    else if (Side == LEFT){
+//                        LeftWheelSpeed(400);
+//                        RightWheelSpeed(-400);
+//                    }
+//            
             if (ThisEvent.EventType == ES_TIMEOUT){ 
-                if (ThisEvent.EventParam == TURN_2PT_TIMER){
-                   ThisEvent.EventType = SHOOTING_2PT_DONE;  
-                    CurrentState = Init;
+                if (ThisEvent.EventParam == TURN_1PT_TIMER){
+                   ThisEvent.EventType = SHOOTING_1PT_DONE;  
+                   CurrentState = Init;
+                    //ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);
                 }
             }
             break;
@@ -198,7 +233,6 @@ ES_Event RunTwoPointerSubHSM(ES_Event ThisEvent)
     }
     return ThisEvent;
 }
-
 
 
 /*******************************************************************************

@@ -40,6 +40,9 @@
 #include "IO_Ports.h"
 #include "Motor_Driver.h"
 
+#include "BdayFSM.h"
+#include "WallFollowerHSM.h"
+#include "Servo.h"
 #include <xc.h>
 #include <stdio.h>
 
@@ -103,7 +106,8 @@ uint8_t CheckDigitalTape(void){
         thisEvent.EventType = curEvent;
         returnVal = TRUE;
         lastEvent = curEvent;  
-        PostTESTEventService(thisEvent);
+        PostBdayFSM(thisEvent);
+        //PostTESTEventService(thisEvent);
     }
     
     PrevTapeVal = TapeVal;
@@ -114,8 +118,12 @@ unsigned char CheckAnalogTape(void){
     
     static ES_EventTyp_t lastEvent_L = ES_NO_EVENT;
     static ES_EventTyp_t lastEvent_R = ES_NO_EVENT;
+    static ES_EventTyp_t lastEvent_FL = ES_NO_EVENT;
+    static ES_EventTyp_t lastEvent_FR = ES_NO_EVENT;
     ES_EventTyp_t curEvent_L;
     ES_EventTyp_t curEvent_R;
+    ES_EventTyp_t curEvent_FL;
+    ES_EventTyp_t curEvent_FR;
     
     
     ES_Event thisEvent;
@@ -123,37 +131,97 @@ unsigned char CheckAnalogTape(void){
     
     uint16_t AnalogTapeReadRight;
     uint16_t AnalogTapeReadLeft;
+    uint16_t AnalogTapeReadFrontRight;
+    uint16_t AnalogTapeReadFrontLeft;
 
     AnalogTapeReadRight =  Analog_TapeRead_R();    
     AnalogTapeReadLeft = Analog_TapeRead_L();
-    
-    if (AnalogTapeReadRight < 250){
-        curEvent_R = RIGHT_WALL_INRANGE;    
-    } else if (350 < AnalogTapeReadRight < 450){
-        curEvent_R = RIGHT_WALL_FAR;
-    } else {
+    AnalogTapeReadFrontRight =  Analog_TapeRead_FR();    
+    AnalogTapeReadFrontLeft = Analog_TapeRead_FL();
+    //printf("Left Tape Reading is: %d", AnalogTapeReadFrontLeft);
+    //printf("Back Tape: %d\r\n", AnalogTapeReadRight);
+    if (AnalogTapeReadRight < 350){
+        curEvent_R = BACK_RIGHT_WALL_INRANGE;    
+    } 
+    else if (AnalogTapeReadRight > 1000){
+        curEvent_R = BACK_RIGHT_WALL_FAR;
+    } 
+    else {
         curEvent_R = lastEvent_R;
     }
     
     if (curEvent_R != lastEvent_R){
         lastEvent_R = curEvent_R;
         thisEvent.EventType = curEvent_R;
-        PostTESTEventService(thisEvent);
+        //PostTESTEventService(thisEvent);
+        PostBdayFSM(thisEvent);
         returnVal = TRUE;
     }
-
-    if (AnalogTapeReadLeft < 250){
-        curEvent_L = LEFT_WALL_INRANGE;       
-    } else if (AnalogTapeReadLeft > 800){
-        curEvent_L = LEFT_WALL_FAR;
-    } else {
-        curEvent_L = lastEvent_L;
+    
+    static unsigned char lastvalBL;
+    unsigned char curvalBL;
+    static int iBL;
+    
+    if (AnalogTapeReadLeft < 350){
+        curvalBL = BACK_LEFT_WALL_INRANGE;       
+    } 
+    else if (AnalogTapeReadLeft > 800){
+        curvalBL = BACK_LEFT_WALL_FAR;
+    } 
+    
+    if (curvalBL == lastvalBL){
+        iBL++;
+    } 
+    else {
+        iBL = 0;
     }
+    
+    if (iBL > 3) {
+        curEvent_L = curvalBL;
+    }    
     
     if (curEvent_L != lastEvent_L){
         lastEvent_L = curEvent_L;
         thisEvent.EventType = curEvent_L;
-        PostTESTEventService(thisEvent);
+        PostBdayFSM(thisEvent);
+        //PostTESTEventService(thisEvent);
+        returnVal = TRUE;
+    }
+    
+    lastvalBL = curvalBL;
+    
+    //FRONT TAPE SENSORS CHECK
+    if (AnalogTapeReadFrontRight < 350){
+        curEvent_FR = FRONT_RIGHT_WALL_INRANGE;    
+    } 
+    else if (AnalogTapeReadFrontRight > 800){
+        curEvent_FR = FRONT_RIGHT_WALL_FAR;
+    } 
+    else {
+        curEvent_FR = lastEvent_FR;
+    }
+    
+    if (curEvent_FR != lastEvent_FR){
+        lastEvent_FR = curEvent_FR;
+        thisEvent.EventType = curEvent_FR;
+        //PostTESTEventService(thisEvent);
+        PostBdayFSM(thisEvent);
+        returnVal = TRUE;
+    }
+
+    if (AnalogTapeReadFrontLeft < 350){
+        curEvent_FL = FRONT_LEFT_WALL_INRANGE;       
+    } else if (AnalogTapeReadFrontLeft > 800){
+        curEvent_FL = FRONT_LEFT_WALL_FAR;
+    } else {
+        curEvent_FL = lastEvent_FL;
+    }
+    
+    if (curEvent_FL != lastEvent_FL){
+        lastEvent_FL = curEvent_FL;
+        thisEvent.EventType = curEvent_FL;
+        PostBdayFSM(thisEvent);
+        //PostTESTEventService(thisEvent);
         returnVal = TRUE;
     }   
 }
@@ -175,7 +243,7 @@ uint8_t CheckBumpers(void){
         i = 0;
     }
     
-    if (i >= 6) {
+    if (i >= 10) {
         Bumper_Curr_Event = Bumper_Curr_Reading;
     }
     
@@ -184,7 +252,8 @@ uint8_t CheckBumpers(void){
         thisEvent.EventType = BUMPER_BUMPED;
         thisEvent.EventParam = Bumper_Curr_Event;
         Bumper_Prev_Event = Bumper_Curr_Event;
-        PostTESTEventService(thisEvent);
+        PostBdayFSM(thisEvent);
+        //PostTESTEventService(thisEvent);
         returnVal = TRUE;
     }
     
@@ -204,7 +273,7 @@ unsigned char CheckTrackWire(void){
     
     if (Reading){
         i++;
-        if (i == 4){
+        if (i == 3){
             curEvent = ON_WIRE;
         } else {
             curEvent = OFF_WIRE;
@@ -218,7 +287,8 @@ unsigned char CheckTrackWire(void){
         thisEvent.EventType = curEvent;
         returnVal = TRUE;
         lastEvent = curEvent;  
-        PostTESTEventService(thisEvent);
+        PostBdayFSM(thisEvent);
+        //PostTESTEventService(thisEvent);
     }
     
     return returnVal;    
@@ -231,11 +301,12 @@ unsigned char CheckBeacon(void){
     ES_Event thisEvent;
     uint8_t returnVal = FALSE;
     
-    unsigned char Reading = ReadBeacon();
+    unsigned int Reading = ReadBeacon();
     
-    if (Reading){
+    if (Reading < 250){
         curEvent = BEACON_PRESENT;
-    } else {
+    } 
+    else if (Reading > 1000) {
         curEvent = BEACON_ABSENT;
     }
     
@@ -243,7 +314,8 @@ unsigned char CheckBeacon(void){
         thisEvent.EventType = curEvent;
         returnVal = TRUE;
         lastEvent = curEvent;  
-        PostTESTEventService(thisEvent);
+        PostBdayFSM(thisEvent);
+        //PostTESTEventService(thisEvent);
     }
     
     return returnVal;    
@@ -319,22 +391,36 @@ uint8_t TemplateCheckBattery(void) {
 void main(void) {
     
     ES_Return_t x;
-    
+    int i;
     BOARD_Init();
+    TurnStile_Init();
+    Stop_Ball();
     Digital_TapeInit();
     Analog_TapeInit();
     Bumper_Init();
     Motors_Init();
     
+    RightFlyWheelSpeed(-800);
+    LeftFlyWheelSpeed(-800);
+    for (i=0; i < 2000000 ; i++){        
+        asm("nop");
+    }
+    RightFlyWheelSpeed(0);
+    LeftFlyWheelSpeed(0);
+    
+    for (i=0; i < 1000000 ; i++){        
+        asm("nop");
+    }
     printf("Welcome to team Bday Cakes event checking harness");
     ES_Initialize();
     
-    x = ES_Run();
-    if (x != 0){
-        printf("Error: %d", x);
-    }
-      
-    while(1);
+    while(1){
+        x = ES_Run();
+        if (x != 0){
+            printf("Error: %d", x);
+        }
+    }  
+
     
     
 }

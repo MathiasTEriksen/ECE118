@@ -138,26 +138,26 @@ ES_Event RunTESTEventService(ES_Event ThisEvent)
             printf("BACK TAPE SENSOR (UN)TRIPPED.....");
             break;
             
-        case (LEFT_WALL_INRANGE):
+        case (BACK_LEFT_WALL_INRANGE):
             printf("LEFT WALL IN RANGE.........");
            ///LeftWheelSpeed(1000);
             //RightWheelSpeed(1000);
             break;
             
-        case (LEFT_WALL_FAR):
+        case (BACK_LEFT_WALL_FAR):
             printf("LEFT WALL FAR.........");
             //LeftWheelSpeed(0);
             //RightWheelSpeed(0);
             break;    
             
             
-        case (RIGHT_WALL_INRANGE):
+        case (BACK_RIGHT_WALL_INRANGE):
             printf("RIGHT WALL IN RANGE.........");
            // LeftWheelSpeed(-1000);
            // RightWheelSpeed(-1000);
             break;
             
-        case (RIGHT_WALL_FAR):
+        case (BACK_RIGHT_WALL_FAR):
             printf("RIGHT WALL FAR.........");
             //LeftWheelSpeed(0);
             //RightWheelSpeed(0);
@@ -167,17 +167,17 @@ ES_Event RunTESTEventService(ES_Event ThisEvent)
             printf("Bumper Bumped: %d", ThisEvent.EventParam);
             
             if (ThisEvent.EventParam == 1){
-                LeftWheelSpeed(0);
-                RightWheelSpeed(0);
+                LeftFlyWheelSpeed(-200);
+                RightFlyWheelSpeed(-200);
             } else if (ThisEvent.EventParam == 2){
-                LeftWheelSpeed(0);
-                RightWheelSpeed(0);
+                LeftFlyWheelSpeed(-400);
+                RightFlyWheelSpeed(-400);
             } else if (ThisEvent.EventParam == 4){
-                LeftWheelSpeed(1000);
-                RightWheelSpeed(1000);
+                LeftFlyWheelSpeed(-600);
+                RightFlyWheelSpeed(-600);
             } else if (ThisEvent.EventParam == 8){
-                LeftWheelSpeed(-1000);
-                RightWheelSpeed(-1000);
+                LeftFlyWheelSpeed(-800);
+                RightFlyWheelSpeed(-800);
             }
             break;
             

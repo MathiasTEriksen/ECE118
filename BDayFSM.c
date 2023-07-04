@@ -31,6 +31,7 @@
 #include "ES_Configure.h"
 #include "ES_Framework.h"
 
+#include <string.h>
 #include "BdayFSM.h"
 #include "BOARD.h"
 #include "BCEventChecker.h"
@@ -47,7 +48,10 @@
 #include "OnePointerSubHSM.h"
 #include "TwoPointerSubHSM.h"
 #include "ThreePointerSubHSM.h"
+#include "OPBSubHSM.h"
+#include "timers.h"
 
+#include <xc.h>
 #include <stdio.h>
 
 
@@ -57,20 +61,33 @@
 
 #define BATTERY_DISCONNECT_THRESHOLD 175
 
-#define TIMER_0_TICKS 50
 #define TAPE_SERVICE_TIMER 0
- 
-#define MOVE_FWD_TIMER 1
-#define MOVE_FWD_TICKS 500
+#define TIMER_0_TICKS 3
 
 #define RELOAD_TIMER 6
-#define RELOAD_TICKS 3000
+#define RELOAD_TICKS 1000
+
+#define TAPE_TIMER 7
+#define TAPE_TICKS 2000
+
+#define BACK_WALL_FOLLOW_TIMER 8
+#define BW_TICKS 1500
+
+#define TAPE_BLOCK_TIMER 11
+#define TAPE_BLOCK_TICKS 500
+
+#define RETURN_TIMER 10
+//#define RETURN_TIMER_BR 12
+
+#define FR 4
+#define FL 8
+#define BR 1
+#define BL 2
 /*******************************************************************************
  * PRIVATE FUNCTION PROTOTYPES                                                 *
  ******************************************************************************/
 /* Prototypes for private functions for this machine. They should be functions
    relevant to the behavior of this state machine.*/
-
 
 /*******************************************************************************
  * PRIVATE MODULE VARIABLES                                                            *
@@ -83,33 +100,52 @@ typedef enum {
     Init,
     Find_Beacon,
     Find_Wall,
-    Align_Wall,
+    Align_F,
+    Align_R,     
+    BAlign_LEAVE,
+    BAlign_RETURN,
+    Pivot,
+    Reverse_Pivot,
+    Wait_For_Tape,
     Follow_Wall,
-    Shoot_1PT,
-    Go_To_2PT,        
+    Reverse_Wall,
+    Test_Stop,
+    Shoot_1PT,        
     Shoot_2PT,
-    Go_To_3PT,        
+    Reverse_To_2PT,        
     Shoot_3PT,
+    Go_to_Reload,        
     Reload
 } BdayFSMState_t;
 
 static const char *StateNames[] = {
 	"Init",
-    "Find_Beacon",
-    "Find_Wall",
-    "Align_Wall",
-    "Follow_Wall",
-    "Shoot_1PT",
-    "Shoot_2PT",
-    "Shoot_3PT",
-    "Reload"
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
 };
 
 
 static BdayFSMState_t CurrentState = Init; // <- change enum name to match ENUM
 static uint8_t MyPriority;
 
-static unsigned char Side;
+//volatile unsigned char Side;
+static unsigned char Direction;
+static unsigned char OnePoint;
+static unsigned char TwoPoint;
+static unsigned char ThreePoint;
+unsigned char Side;
+
+
 
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
@@ -139,14 +175,18 @@ uint8_t InitBdayFSM(uint8_t Priority)
     Analog_TapeInit();
     Bumper_Init();
     Motors_Init();
-    
+    Beacon_Init();
+    InitOnePointerSubHSM();
+    //InitOPBSubHSM();
+    InitTwoPointerSubHSM();
+    InitThreePointerSubHSM();
     TurnStile_Init();
     
     ES_Timer_InitTimer(TAPE_SERVICE_TIMER, TIMER_0_TICKS);
     
     Side = CheckSide();
     Stop_Ball();
-    
+    printf("WallFollowerHSM\r\n");
     // post the initial transition event
     if (ES_PostToService(MyPriority, INIT_EVENT) == TRUE) {
         return TRUE;
@@ -154,7 +194,7 @@ uint8_t InitBdayFSM(uint8_t Priority)
         return FALSE;
     }
 }
-
+ 
 /**
  * @Function PostTemplateFSM(ES_Event ThisEvent)
  * @param ThisEvent - the event (type and param) to be posted to queue
@@ -181,12 +221,67 @@ uint8_t PostBdayFSM(ES_Event ThisEvent)
  * @note Remember to rename to something appropriate.
  *       Returns ES_NO_EVENT if the event have been "consumed."
  * @author J. Edward Carryer, 2011.10.23 19:25 */
-ES_Event RunTemplateFSM(ES_Event ThisEvent)
+ES_Event RunBdayFSM(ES_Event ThisEvent)
 {
+    static unsigned char FRSensor = FALSE;
+    static unsigned char FLSensor = FALSE;
+    static unsigned char TapeFlag = FALSE;
+    static unsigned char Collision_Flag = FALSE;
+    static unsigned char LastState;
+    static unsigned char One_Point_Done = FALSE;
+    static unsigned char Two_Point_Done = FALSE;
+    static uint32_t LastTime;
+    static uint32_t CurrentTime;
+    int i;
     
-    switch (ThisEvent.EventType){
+//    if (ThisEvent.EventType == RIGHT_WALL_INRANGE){
+//        printf("RIGHT WALL INRANGE\r\n");
+//    }
+//    
+//    if (ThisEvent.EventType == RIGHT_WALL_FAR){
+//        printf("RIGHT WALL FAR\r\n");
+//    }
+    //printf("Front Left Tape: %d\r\n", Analog_TapeRead_FL());
+    if (ThisEvent.EventType == BACK_RIGHT_WALL_INRANGE){
+        printf("BACK RIGHT WALL INRANGE\r\n");
+    }
+    
+    if (ThisEvent.EventType == BACK_RIGHT_WALL_FAR){
+        printf("BACK RIGHT WALL FAR\r\n");
+    }
+    
+    if (ThisEvent.EventType == FRONT_LEFT_WALL_INRANGE){
+        printf("FRONT LEFT WALL INRANGE\r\n");
+    }
+    
+    if (ThisEvent.EventType == FRONT_LEFT_WALL_FAR){
+        printf("FRONT LEFT WALL FAR\r\n");
+    }
+    if (ThisEvent.EventType == BUMPER_BUMPED) {
+        if (ThisEvent.EventParam == FL) printf("Front Left\r\n");
+        if (ThisEvent.EventParam == FR) printf("Front Right\r\n");
+        if (ThisEvent.EventParam == BL) printf("Back Left\r\n");
+        if (ThisEvent.EventParam == BR) printf("Back Right\r\n");
         
-        case (ES_TIMEOUT):
+    }
+//    if (ThisEvent.EventType == ON_WIRE) {
+//        printf("ON_WIRE\r\n");        
+//    }
+//    if (ThisEvent.EventType == OFF_WIRE) {
+//        printf("OFF_WIRE\r\n");        
+//    }
+    if (ThisEvent.EventType == BEACON_PRESENT) {
+        printf("BEACON HERE\r\n");        
+    }
+    if (ThisEvent.EventType == BEACON_ABSENT) {
+        printf("BEACON ABSENT\r\n");        
+    }
+   
+       
+    
+    
+    switch (ThisEvent.EventType){    
+    case (ES_TIMEOUT):
             if (ThisEvent.EventParam == TAPE_SERVICE_TIMER){
                 CheckDigitalTape();
                 CheckAnalogTape();
@@ -194,6 +289,19 @@ ES_Event RunTemplateFSM(ES_Event ThisEvent)
                 CheckTrackWire();
                 CheckBeacon();
                 ES_Timer_InitTimer(TAPE_SERVICE_TIMER, TIMER_0_TICKS);
+            }
+
+            if (ThisEvent.EventParam == TAPE_TIMER){
+                TapeFlag = TRUE;
+            }
+            
+            if (ThisEvent.EventParam == TAPE_BLOCK_TIMER) {
+                Two_Point_Done = TRUE;
+            }
+            if (ThisEvent.EventParam == RETURN_TIMER) {
+                    CurrentState = Reload;
+                    ES_Timer_InitTimer(RELOAD_TIMER, RELOAD_TICKS);
+                    Side = !Side;
             }
             break;
         case(ES_TIMERACTIVE):
@@ -206,139 +314,712 @@ ES_Event RunTemplateFSM(ES_Event ThisEvent)
     
     switch (CurrentState) {
         
+        
         case Init: // If current state is initial Psedudo State
             CurrentState = Find_Beacon;
+//            RightWheelSpeed(1000);
+//            LeftWheelSpeed(1000);
             break;
 
         case Find_Beacon: // in the first state, replace this with appropriate state
-
-            LeftWheelSpeed(-1000);
-            RightWheelSpeed(1000);
+            Two_Point_Done = FALSE;
+            One_Point_Done = FALSE;
+            if (Side == RIGHT){
+                LeftWheelSpeed(1000);
+                RightWheelSpeed(-1000);
+            } 
+            else {
+                LeftWheelSpeed(-1000);
+                RightWheelSpeed(1000);
+            }
 
             if (ThisEvent.EventType == BEACON_PRESENT){
                 CurrentState = Find_Wall;
+                ES_Timer_InitTimer(TAPE_TIMER, TAPE_TICKS);
+                //LeftWheelSpeed(500);
+                //RightWheelSpeed(500);
+                LeftFlyWheelSpeed(-300);
+                RightFlyWheelSpeed(-300);
+                
+                if (Side == RIGHT){
+                    if (Analog_TapeRead_FR() < 450){
+                        CurrentState = Pivot;
+                        RightWheelSpeed(300);
+                        LeftWheelSpeed(0);
+                        
+                        if (Analog_TapeRead_L() < 450){
+                            CurrentState = Follow_Wall;
+                            RightWheelSpeed(1000);
+                            LeftWheelSpeed(400);
+                        }
+                    }
+                } 
+                else if (Side == LEFT) {
+                    if (Analog_TapeRead_FL() < 450){
+                        CurrentState = Pivot;
+                        RightWheelSpeed(0);
+                        LeftWheelSpeed(300);
+                        
+                        if (Analog_TapeRead_L() < 450){
+                            CurrentState = Follow_Wall;
+                            RightWheelSpeed(400);
+                            LeftWheelSpeed(1000);
+                        }
+                    }
+                }
             }
             break;
         
         case Find_Wall:
-            if (Side == RIGHT){
+            
+            if (Side == RIGHT){     
+
+                LeftWheelSpeed(400);
+                RightWheelSpeed(350);
                 
-                LeftWheelSpeed(500);
-                RightWheelSpeed(250);
-                
-                if (ThisEvent.EventType = BUMPER_BUMPED){
-                    if (ThisEvent.EventParam == 4) {
-                            CurrentState = Align_Wall;
+                if (ThisEvent.EventType == FRONT_RIGHT_WALL_INRANGE){
+                    CurrentState = Pivot;
+                    RightWheelSpeed(300);
+                    LeftWheelSpeed(0);
+                    
+                    if (Analog_TapeRead_R() < 450){
+                        CurrentState = Follow_Wall;
+                        RightWheelSpeed(1000);
+                        LeftWheelSpeed(400);
                     }
                 }
+            } 
+            else if (Side == LEFT){
                 
-            } else if (Side == LEFT){
+                LeftWheelSpeed(400);
+                RightWheelSpeed(400);
                 
-                LeftWheelSpeed(250);
-                RightWheelSpeed(500);
-                
-                if (ThisEvent.EventType = BUMPER_BUMPED){
-                    if (ThisEvent.EventParam == 8) {
-                            CurrentState = Align_Wall;
+                if (ThisEvent.EventType == FRONT_LEFT_WALL_INRANGE){
+                    CurrentState = Pivot;
+                    RightWheelSpeed(0);
+                    LeftWheelSpeed(300);
+                    
+                    if (Analog_TapeRead_L() < 450){
+                        CurrentState = Follow_Wall;
+                        RightWheelSpeed(400);
+                        LeftWheelSpeed(1000);
                     }
+                }
+            }
+            
+            if (ThisEvent.EventType == BUMPER_BUMPED){
+                if (ThisEvent.EventParam & (FR | FL)) {
+                    //TapeFlag = FALSE;
+                    Collision_Flag = TRUE;
+                    if (Side == RIGHT){
+                        if (Analog_TapeRead_R() < 450){
+                            RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            CurrentState = Reverse_Wall;
+                        } 
+                        else {
+                           RightWheelSpeed(-400);
+                            LeftWheelSpeed(-1000);
+                            LastState = Reverse_Wall;
+                            CurrentState = Align_R; 
+                        }
+                    } else if (Side == LEFT){
+                        if (Analog_TapeRead_L() < 450){
+                            RightWheelSpeed(-400);
+                            LeftWheelSpeed(-1000); 
+                            CurrentState = Reverse_Wall;
+                        } 
+                        else {
+                           RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            LastState = Reverse_Wall;
+                            CurrentState = Align_R; 
+                        }
+                    }
+                    
                 }
             }
             break;
-            
-        case Align_Wall:
+
+
+        case Pivot: 
             
             if (Side == RIGHT){
-                
-                LeftWheelSpeed(250);
-                RightWheelSpeed(500);
-                
-                if (ThisEvent.EventType == RIGHT_WALL_INRANGE){
-                    CurrentState = Follow_Wall;
+                if (ThisEvent.EventType == BACK_RIGHT_WALL_INRANGE){
+                    if (FRSensor){
+                        CurrentState = Align_F;
+                        LastState = Follow_Wall;
+                        RightWheelSpeed(400);
+                        LeftWheelSpeed(1000);
+                    } 
+                    else {
+                        CurrentState = Follow_Wall;
+                        RightWheelSpeed(1000);
+                        LeftWheelSpeed(400);
+                    }   
+                }
+                if (ThisEvent.EventType == FRONT_RIGHT_WALL_FAR){
+                    FRSensor = TRUE;                    
+                }
+            } 
+            else if (Side == LEFT){
+                if (ThisEvent.EventType == BACK_LEFT_WALL_INRANGE){
+                    if (FLSensor){
+                        CurrentState = Align_F;
+                        LastState = Follow_Wall;
+                        RightWheelSpeed(1000);
+                        LeftWheelSpeed(400);
+                    } 
+                    else {
+                        CurrentState = Follow_Wall;
+                        RightWheelSpeed(400);
+                        LeftWheelSpeed(1000);
+                    }
+                }
+                if (ThisEvent.EventType == FRONT_LEFT_WALL_FAR){
+                    FLSensor = TRUE;
+                }
+            } 
+            
+            if (ThisEvent.EventType == BUMPER_BUMPED){
+                if (ThisEvent.EventParam & (FR | FL)) {
+                    Collision_Flag = TRUE;
+                    //TapeFlag = FALSE;
+                    if (Side == RIGHT){
+                        if (Analog_TapeRead_R() < 450){
+                            RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            CurrentState = Reverse_Wall;
+                        } 
+                        else {
+                           RightWheelSpeed(-400);
+                            LeftWheelSpeed(-1000);
+                            LastState = Reverse_Wall;
+                            CurrentState = Align_R; 
+                        }
+                    } else if (Side == LEFT){
+                        if (Analog_TapeRead_L() < 450){
+                            RightWheelSpeed(-400);
+                            LeftWheelSpeed(-1000); 
+                            CurrentState = Reverse_Wall;
+                        } 
+                        else {
+                           RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            LastState = Reverse_Wall;
+                            CurrentState = Align_R; 
+                        }
+                    }
+                    
                 }
             }
             
-            else if (Side == LEFT){
-                
-                LeftWheelSpeed(500);
-                RightWheelSpeed(250);
-                
-                if (ThisEvent.EventType == LEFT_WALL_INRANGE){
-                    CurrentState = Follow_Wall;
+            if (ThisEvent.EventType == ES_TIMEOUT) {
+                if (ThisEvent.EventParam == BACK_WALL_FOLLOW_TIMER) {
+                    CurrentState = Find_Beacon;
+                    LeftFlyWheelSpeed(0);
+                    RightFlyWheelSpeed(0);
+                }
+            }
+            
+            break;
+         
+        case Follow_Wall:     
+
+            if ((ThisEvent.EventType == FRONT_LEFT_WALL_FAR) && (Side == LEFT)){
+                LastState = CurrentState;
+                CurrentState = Align_F;
+                RightWheelSpeed(1000);
+                LeftWheelSpeed(400);
+            }
+            else if ((ThisEvent.EventType == FRONT_RIGHT_WALL_FAR) && (Side == RIGHT)){
+                LastState = CurrentState;
+                CurrentState = Align_F;
+                RightWheelSpeed(400);
+                LeftWheelSpeed(1000);
+            }  
+
+            if ((ThisEvent.EventType == BACK_TAPE_TRIPPED) && (TapeFlag == TRUE)){
+                    
+                    ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
+                    //CurrentState = Shoot_1PT;
+            }
+            
+            if (ThisEvent.EventType == ES_TIMEOUT) {
+                if (ThisEvent.EventParam == MOVE_FWD_TIMER) {
+                    CurrentState = Shoot_1PT;
+                    LeftWheelSpeed(0);
+                    RightWheelSpeed(0);
+                }
+            }
+            if (ThisEvent.EventType == BUMPER_BUMPED){
+                if (ThisEvent.EventParam & (FR | FL)) {
+                    Collision_Flag = TRUE;
+                    
+                    if (Side == RIGHT){
+                        if (Analog_TapeRead_R() < 450){
+                            RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            CurrentState = Reverse_Wall;
+                        } 
+                        else {
+                           RightWheelSpeed(-400);
+                           LeftWheelSpeed(-1000);  
+                           LastState = Reverse_Wall;
+                           CurrentState = Align_R; 
+                        }
+                    } 
+                    else if (Side == LEFT){
+                        if (Analog_TapeRead_L() < 450){
+                            RightWheelSpeed(-400);
+                            LeftWheelSpeed(-1000); 
+                            CurrentState = Reverse_Wall;
+                        } else {
+                            RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            LastState = Reverse_Wall;
+                            CurrentState = Align_R; 
+                        }
+                    }
+                }
+            }
+            
+            if (ThisEvent.EventType == ES_TIMEOUT) {
+                if (ThisEvent.EventParam == BACK_WALL_FOLLOW_TIMER) {
+                    CurrentState = Find_Beacon;
+                    LeftFlyWheelSpeed(0);
+                    RightFlyWheelSpeed(0);
+                } else if (ThisEvent.EventParam == RETURN_TIMER) {
+                    CurrentState = Reload;
+                    ES_Timer_InitTimer(RELOAD_TIMER, RELOAD_TICKS);
+                    Side = !Side;
+                }
+            }
+            break;
+
+        case Align_F:
+
+            if (ThisEvent.EventType == FRONT_LEFT_WALL_INRANGE && Side == LEFT){
+                RightWheelSpeed(400);
+                LeftWheelSpeed(1000);
+                CurrentState = LastState;
+            }
+            if (ThisEvent.EventType == FRONT_RIGHT_WALL_INRANGE && Side == RIGHT){
+                RightWheelSpeed(1000);
+                LeftWheelSpeed(400);
+                CurrentState = LastState;
+            }
+            
+            if ((ThisEvent.EventType == BACK_TAPE_TRIPPED) && (TapeFlag == TRUE)){
+                    
+                    ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
+                    //CurrentState = Shoot_1PT;
+            }
+            
+            if (ThisEvent.EventType == ES_TIMEOUT) {
+                if (ThisEvent.EventParam == MOVE_FWD_TIMER) {
+                    CurrentState = Shoot_1PT;
+                    LeftWheelSpeed(0);
+                    RightWheelSpeed(0);
+                }
+            }
+            if (ThisEvent.EventType == ES_TIMEOUT) {
+                if (ThisEvent.EventParam == BACK_WALL_FOLLOW_TIMER) {
+                    CurrentState = Find_Beacon;
+                    LeftFlyWheelSpeed(0);
+                    RightFlyWheelSpeed(0);
+                } else if (ThisEvent.EventParam == RETURN_TIMER) {
+                    CurrentState = Reload;
+                    ES_Timer_InitTimer(RELOAD_TIMER, RELOAD_TICKS);
+                    Side = !Side;
+                }
+            }
+            
+            if (ThisEvent.EventType == BUMPER_BUMPED){
+                if (ThisEvent.EventParam & (FR | FL)) {
+                    Collision_Flag = TRUE;
+                    if (Side == RIGHT){
+                        if (Analog_TapeRead_R() < 450){
+                            RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            CurrentState = Reverse_Wall;
+                        } else {
+                           RightWheelSpeed(-400);
+                           LeftWheelSpeed(-1000); 
+                           LastState = Reverse_Wall;
+                           CurrentState = Align_R; 
+                        }
+                    } 
+                    else if (Side == LEFT){
+                        if (Analog_TapeRead_L() < 450){
+                            RightWheelSpeed(-400);
+                            LeftWheelSpeed(-1000); 
+                            CurrentState = Reverse_Wall;
+                        } else {
+                           RightWheelSpeed(-1000);
+                            LeftWheelSpeed(-400); 
+                            LastState = Reverse_Wall;
+                            CurrentState = Align_R; 
+                        }
+                    }
+                }
+            }
+            break;    
+
+
+        case Shoot_1PT:   
+            
+            ThisEvent = RunOnePointerSubHSM(ThisEvent);
+            
+            if (ThisEvent.EventType == SHOOTING_1PT_DONE){ 
+                One_Point_Done = TRUE;
+                //CurrentState = Reverse_To_2PT;
+                if (Side == RIGHT){
+                    if (Analog_TapeRead_R() < 450){
+                        RightWheelSpeed(-1000);
+                        LeftWheelSpeed(-400); 
+                        CurrentState = Reverse_Wall;
+                    } 
+                    else {
+                       RightWheelSpeed(-400);
+                        LeftWheelSpeed(-1000);
+                        LastState = Reverse_Wall;
+                        CurrentState = Align_R; 
+                    }
+                } else if (Side == LEFT){
+                    if (Analog_TapeRead_L() < 450){
+                        RightWheelSpeed(-400);
+                        LeftWheelSpeed(-1000); 
+                        CurrentState = Reverse_Wall;
+                    } 
+                    else {
+                       RightWheelSpeed(-1000);
+                        LeftWheelSpeed(-400);
+                        LastState = Reverse_Wall;
+                        CurrentState = Align_R; 
+                    }
                 }
             }
             break;
         
-        case Follow_Wall:
+//        case Reverse_To_2PT:
+//            
+//            if (ThisEvent.EventType == FRONT_TAPE_UNTRIPPED){
+//                RightWheelSpeed(0);
+//                LeftWheelSpeed(0);
+//                CurrentState = Shoot_2PT;
+//                ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
+//            }
+//            
+//            break;
             
-            RightWheelSpeed(1000);
-            LeftWheelSpeed(1000);
+        case Reverse_Wall:
             
-            if (BACK_TAPE_TRIPPED){
-                CurrentState = Shoot_1PT;
-                ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
-            } 
-            break;
-            
-        case Shoot_1PT:                        
-            RunOnePointerSubHSM(ThisEvent);
-            RightWheelSpeed(1000);
-            LeftWheelSpeed(1000);
-            
-            if (ThisEvent.EventType == SHOOTING_1PT_DONE){
-                CurrentState = Go_To_2PT;
-            }
-            break;
-            
-        case Go_To_2PT:
-            
-            RightWheelSpeed(-1000);
-            LeftWheelSpeed(-1000);
-                
-            if (ThisEvent.EventType = FRONT_TAPE_TRIPPED){
+            if ((ThisEvent.EventType == FRONT_TAPE_UNTRIPPED) && (One_Point_Done)  && (!Two_Point_Done)){
+                RightWheelSpeed(0);
+                LeftWheelSpeed(0);
                 CurrentState = Shoot_2PT;
                 ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
             }
-            break;
+            if ((ThisEvent.EventType == BACK_LEFT_WALL_FAR) && Side == LEFT){
+                LastState = CurrentState;
+                CurrentState = Align_R;
+                RightWheelSpeed(-1000);
+                LeftWheelSpeed(-400);
+            }
+            else if ((ThisEvent.EventType == BACK_RIGHT_WALL_FAR) && Side == RIGHT){
+                LastState = CurrentState;
+                CurrentState = Align_R;
+                RightWheelSpeed(-400);
+                LeftWheelSpeed(-1000);
+            }  
+
+//            if ((ThisEvent.EventType == ON_WIRE) && (!Collision_Flag)){
+//                    LeftWheelSpeed(-500);
+//                    RightWheelSpeed(-500);
+//                    ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
+//                    CurrentState = Shoot_3PT;
+//            } 
             
-        case Shoot_2PT:
-            
-            RunTwoPointerSubHSM(ThisEvent);
-            RightWheelSpeed(0);
-            LeftWheelSpeed(0);
-            
-            if (ThisEvent.EventType == SHOOTING_2PT_DONE){
-                CurrentState = Go_To_3PT;
+            if ((ThisEvent.EventType == BUMPER_BUMPED) && Collision_Flag) {
+                if (ThisEvent.EventParam & (BL |BR)) {
+                    if (Two_Point_Done){
+                        CurrentState = BAlign_RETURN;
+                         if (Side == LEFT) {
+                            RightWheelSpeed(-300);
+                            LeftWheelSpeed(300);
+                        }
+                        else {
+                            RightWheelSpeed(300);
+                            LeftWheelSpeed(-300);    
+                        }
+                    } else {
+                        CurrentState = BAlign_LEAVE;
+
+                        if (Side == LEFT) {
+                            RightWheelSpeed(-400);
+                            LeftWheelSpeed(300);
+                        }
+                        else {
+                            RightWheelSpeed(300);
+                            LeftWheelSpeed(-400);    
+                        }
+                        Side = !Side;
+                    }
+                }
             }
             
-        case Go_To_3PT:
             
-            RightWheelSpeed(-1000);
-            LeftWheelSpeed(-1000);
-                
-            if (ThisEvent.EventType = ON_WIRE){
-                CurrentState = Shoot_3PT;
+            if ((ThisEvent.EventType == FRONT_TAPE_UNTRIPPED) && (!Collision_Flag) && (Two_Point_Done)) {
+                ES_Timer_InitTimer(RELOAD_TIMER, RELOAD_TICKS);
+                CurrentState = Reload;
+            }                
+            
+            break;
+            
+        case Align_R:
+            
+            if ((ThisEvent.EventType == FRONT_TAPE_UNTRIPPED) && (One_Point_Done) && (!Two_Point_Done)){
+                RightWheelSpeed(0);
+                LeftWheelSpeed(0);
+                CurrentState = Shoot_2PT;
                 ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
             }
-            break;
-            
-        case Shoot_3PT:
-            RunThreePointerSubHSM(ThisEvent);
-            RightWheelSpeed(0);
-            LeftWheelSpeed(0);
-            
-            if (ThisEvent.EventType == SHOOTING_3PT_DONE){
-                CurrentState = Reload;
-                ES_Timer_InitTimer(RELOAD_TIMER, RELOAD_TICKS);
+            if ((ThisEvent.EventType == BACK_LEFT_WALL_INRANGE) && (Side == LEFT)){
+                RightWheelSpeed(-400);
+                LeftWheelSpeed(-1000);
+                CurrentState = LastState;
             }
-            break;
+            if ((ThisEvent.EventType == BACK_RIGHT_WALL_INRANGE) && (Side == RIGHT)){
+                RightWheelSpeed(-1000);
+                LeftWheelSpeed(-400);
+                CurrentState = LastState;
+            } 
+
+//            if ((ThisEvent.EventType == ON_WIRE) && !Collision_Flag){
+//                    LeftWheelSpeed(0);
+//                    RightWheelSpeed(0);
+//                    ES_Timer_InitTimer(MOVE_FWD_TIMER, MOVE_FWD_TICKS);
+//                    CurrentState = Shoot_3PT;
+//            }
+            if ((ThisEvent.EventType == BUMPER_BUMPED) && Collision_Flag) {
+                if (ThisEvent.EventParam & (BL |BR)) {
+                    if (Two_Point_Done){
+                        CurrentState = BAlign_RETURN;
+                         if (Side == LEFT) {
+                            RightWheelSpeed(-300);
+                            LeftWheelSpeed(300);
+                        }
+                        else {
+                            RightWheelSpeed(300);
+                            LeftWheelSpeed(-300);    
+                        }
+                    } else {
+                        CurrentState = BAlign_LEAVE;
+
+                        if (Side == LEFT) {
+                            RightWheelSpeed(-300);
+                            LeftWheelSpeed(300);
+                        }
+                        else {
+                            RightWheelSpeed(300);
+                            LeftWheelSpeed(-300);    
+                        }
+                        Side = !Side;
+                    }
+                }
+            }
             
-        case Reload:
+            if ((ThisEvent.EventType == FRONT_TAPE_UNTRIPPED) && (!Collision_Flag) && (Two_Point_Done)) {
+                ES_Timer_InitTimer(RELOAD_TIMER, RELOAD_TICKS);
+                CurrentState = Reload;
+            }                
+            break; 
             
-            if (ThisEvent.EventType == ES_TIMEOUT){
-                if (ThisEvent.EventParam == RELOAD_TIMER){
+        case BAlign_LEAVE:
+            if (Side == RIGHT) {
+                if (ThisEvent.EventType == FRONT_RIGHT_WALL_INRANGE){
+                    TapeFlag = FALSE;
+                    CurrentState = Follow_Wall;
+                    RightWheelSpeed(1000);
+                    //LeftWheelSpeed(400);  
+                    LeftFlyWheelSpeed(0);
+                    RightFlyWheelSpeed(0);
+                    ES_Timer_InitTimer(BACK_WALL_FOLLOW_TIMER, BW_TICKS);
+                }
+            }
+            else if (Side == LEFT) {
+                if (ThisEvent.EventType == FRONT_LEFT_WALL_INRANGE){
+                    TapeFlag = FALSE;
+                    CurrentState = Follow_Wall;
+                    //RightWheelSpeed(400);
+                    LeftWheelSpeed(1000);
+                    LeftFlyWheelSpeed(0);
+                    RightFlyWheelSpeed(0);
+                    ES_Timer_InitTimer(BACK_WALL_FOLLOW_TIMER, BW_TICKS);
+                }
+            }
+            
+            if (ThisEvent.EventType == ES_TIMEOUT) {
+                if (ThisEvent.EventParam == BACK_WALL_FOLLOW_TIMER) {
                     CurrentState = Find_Beacon;
                 }
             }
+            break;
+
+        case Shoot_2PT:
+
+            ThisEvent = RunTwoPointerSubHSM(ThisEvent);
+            
+            if (ThisEvent.EventType == SHOOTING_2PT_DONE){
+                ES_Timer_InitTimer(TAPE_BLOCK_TIMER, TAPE_BLOCK_TICKS);
+                
+                if (Side == RIGHT){
+                    if (Analog_TapeRead_R() < 450){
+                        RightWheelSpeed(-1000);
+                        LeftWheelSpeed(-400); 
+                        CurrentState = Reverse_Wall;
+                    } else {
+                       RightWheelSpeed(-400);
+                        LeftWheelSpeed(-1000); 
+                        CurrentState = Align_R; 
+                    }
+                } else if (Side == LEFT){
+                    if (Analog_TapeRead_L() < 450){
+                        RightWheelSpeed(-400);
+                        LeftWheelSpeed(-1000); 
+                        CurrentState = Reverse_Wall;
+                    } else {
+                       RightWheelSpeed(-1000);
+                        LeftWheelSpeed(-400); 
+                        CurrentState = Align_R; 
+                    }
+                }   
+                              
+            }
+            break;
+             
+//        case Shoot_3PT:
+//
+//            ThisEvent = RunThreePointerSubHSM(ThisEvent);
+//
+//            if (ThisEvent.EventType == SHOOTING_3PT_DONE){
+//                CurrentState = Go_to_Reload;
+//                LeftWheelSpeed(-500);
+//                RightWheelSpeed(-500);
+//            }
+//            
+//            break;
+            
+//        case Go_to_Reload:
+//            
+//            if ((ThisEvent.EventType == FRONT_TAPE_UNTRIPPED) && !Collision_Flag) {
+//                ES_Timer_InitTimer(RELOAD_TIMER, RELOAD_TICKS);
+//                CurrentState = Reload;
+//            }                
+//            else if ((ThisEvent.EventType == FRONT_TAPE_UNTRIPPED) && Collision_Flag) {
+//                CurrentState = BAlign_RETURN;
+//                if (Side == LEFT) {
+//                    RightWheelSpeed(-300);
+//                    LeftWheelSpeed(300);
+//                }
+//                else {
+//                    RightWheelSpeed(300);
+//                    LeftWheelSpeed(-300);    
+//                }
+//            }
+//            break;
+            
+        case BAlign_RETURN:
+            if (Side == RIGHT) {
+                if (ThisEvent.EventType == FRONT_LEFT_WALL_INRANGE){
+                    CurrentState = Follow_Wall;
+                    Side = !Side;
+                    RightWheelSpeed(400);
+                    LeftWheelSpeed(1000);
+                    TapeFlag = FALSE;
+                    //LeftFlyWheelSpeed(-300);
+                    ES_Timer_InitTimer(RETURN_TIMER, BW_TICKS);
+                }
+            }
+            else if (Side == LEFT) {
+                if (ThisEvent.EventType == FRONT_RIGHT_WALL_INRANGE){
+                    CurrentState = Follow_Wall;
+                    Side = !Side;
+                    RightWheelSpeed(1000);
+                    LeftWheelSpeed(400);
+                    TapeFlag = FALSE;
+                    //RightFlyWheelSpeed(-300);
+                    ES_Timer_InitTimer(RETURN_TIMER, BW_TICKS);
+                }
+            }
+            
+            break;
+        case Reload:
+            RightWheelSpeed(0);
+            LeftWheelSpeed(0);
+            LeftFlyWheelSpeed(-300);
+            RightFlyWheelSpeed(-300);
+                
+
+            if (ThisEvent.EventType == ES_TIMEOUT){
+                if (ThisEvent.EventParam == RELOAD_TIMER){
+                    ES_Timer_InitTimer(TAPE_TIMER, TAPE_TICKS);
+
+                    FLSensor = FALSE;
+                    FRSensor = FALSE;
+                    TapeFlag = FALSE;
+                    Two_Point_Done = FALSE;
+                    One_Point_Done = FALSE;
+            
+            if (!Collision_Flag){        
+                    if (Side == RIGHT){
+                        if (Analog_TapeRead_FR() < 450){
+                            RightWheelSpeed(1000);
+                            LeftWheelSpeed(400);
+                            CurrentState = Follow_Wall;
+                        } else {
+                            RightWheelSpeed(400);
+                            LeftWheelSpeed(1000);
+                            LastState = Follow_Wall;
+                            CurrentState = Align_F;
+                        }
+                    } else if (Side == LEFT){
+                        if (Analog_TapeRead_FL() < 450){
+                            RightWheelSpeed(400);
+                            LeftWheelSpeed(1000);
+                            CurrentState = Follow_Wall;
+                        } else {
+                            RightWheelSpeed(1000);
+                            LeftWheelSpeed(400);
+                            LastState = Follow_Wall;
+                            CurrentState = Align_F;
+                        }
+                    }
+                
+            }
+            else if (Collision_Flag) {
+                CurrentState = BAlign_LEAVE;
+                if (Side == RIGHT) {
+                    RightWheelSpeed(400);
+                    LeftWheelSpeed(-400);
+                }
+                else if (Side == LEFT){
+                    RightWheelSpeed(-400);
+                    LeftWheelSpeed(600);
+                }
+            }
+                }
+            }
+    
+            break;
+            
+        case Test_Stop:
+           LeftFlyWheelSpeed(0);
+           RightFlyWheelSpeed(0);
+           RightWheelSpeed(0);
+           LeftWheelSpeed(0);
+           break;
             
         default: // all unhandled states fall into here
             break;
@@ -351,3 +1032,4 @@ ES_Event RunTemplateFSM(ES_Event ThisEvent)
 /*******************************************************************************
  * PRIVATE FUNCTIONS                                                           *
  ******************************************************************************/
+

@@ -8,4 +8,5 @@ unsigned char CheckAnalogTape(void);
 uint8_t CheckBumpers(void);
 unsigned char CheckTrackWire(void);
 unsigned char CheckBeacon(void);
+uint8_t TemplateCheckBattery(void);
 unsigned char CheckSide(void);

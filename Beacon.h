@@ -32,7 +32,7 @@ unsigned char Beacon_Init(void);
  * @return 1 for on track wire 0 for off
  * @brief Reads Track Wire Pin
  * @author Leo King */
-uint8_t ReadBeacon(void);
+unsigned int ReadBeacon(void);
 
 /* *****************************************************************************
  End of File

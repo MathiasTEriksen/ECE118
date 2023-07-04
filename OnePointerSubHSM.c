@@ -38,27 +38,31 @@
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
-#define MOVE_FWD_TIMER 1
-#define MOVE_FWD_TICKS 500
 
 #define TURN_1PT_TIMER 2
-#define TURN_1PT_TICKS 500
+#define TURNL_1PT_TICKS 100
+#define TURNR_1PT_TICKS 15
+#define FSpeed_TICKS 1200
+
 
 typedef enum {
     Init,
-    Move_Fwd,
+    End,
     Turn,
+    Shooting,
     Turn_Back,        
 } OnePointerSubHSMState_t;
 
 static const char *StateNames[] = {
-    "Init",
-    "Move_Fwd",
-    "Turn",
-    "Turn_Back", 
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
 };
 
-static unsigned char Side;
+//extern unsigned char Side;
+//static unsigned char Side;
+static first_run = 0;
 /*******************************************************************************
  * PRIVATE FUNCTION PROTOTYPES                                                 *
  ******************************************************************************/
@@ -73,6 +77,7 @@ static unsigned char Side;
 
 static OnePointerSubHSMState_t CurrentState = Init; // <- change name to match ENUM
 static uint8_t MyPriority;
+static int Shot_Twice = 0;
 
 
 /*******************************************************************************
@@ -92,8 +97,7 @@ static uint8_t MyPriority;
 uint8_t InitOnePointerSubHSM(void)
 {
     CurrentState = Init;    
-    Side = CheckSide();
-
+    //Side = CheckSide();
     return TRUE;
 }
 
@@ -117,53 +121,89 @@ ES_Event RunOnePointerSubHSM(ES_Event ThisEvent)
 
     switch (CurrentState) {
         case Init: // If current state is initial Psedudo State
-            CurrentState = Move_Fwd;
+            CurrentState = Turn;
             break;
 
-        case Move_Fwd: // in the first state, replace this with correct names
-            if (ThisEvent.EventType == ES_TIMEOUT){
-                if (ThisEvent.EventParam == MOVE_FWD_TIMER){
-                    if (Side == RIGHT){
-                        LeftWheelSpeed(0);
-                        RightWheelSpeed(1000);
-                    } else if (Side == LEFT){
-                        LeftWheelSpeed(1000);
-                        RightWheelSpeed(0);
-                    }
-                    ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);   
-                    CurrentState = Turn;
-                }
+        case Turn: // in the first state, replace this with correct names
+            if (Side == RIGHT){
+                LeftWheelSpeed(-100);
+                RightWheelSpeed(500);
+                ES_Timer_InitTimer(TURN_1PT_TIMER, TURNR_1PT_TICKS); 
+            } 
+            else if (Side == LEFT){
+                LeftWheelSpeed(500);
+                RightWheelSpeed(-100);
+                ES_Timer_InitTimer(TURN_1PT_TIMER, TURNL_1PT_TICKS); 
             }
-            break;
+            CurrentState = Shooting;
 
-        case Turn:
-            if (ThisEvent.EventType == ES_TIMEOUT){
-                if (ThisEvent.EventParam == TURN_1PT_TIMER){
-                    ES_Timer_InitTimer(BALL_RELEASE_TIMER, BALL_RELEASE_TICKS);
-                    Send_Ball();
-                } else if (ThisEvent.EventParam == BALL_RELEASE_TIMER){
-                    Stop_Ball();
-                    if (Side == RIGHT){
-                        LeftWheelSpeed(1000);
-                        RightWheelSpeed(0);
-                    } else if (Side == LEFT){
-                        LeftWheelSpeed(0);
-                        RightWheelSpeed(1000);
-                    }  
-                    CurrentState = Turn_Back;
-                    ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);
-                }
-            }
-            break;
-
-        case Turn_Back:
             
-            if (ThisEvent.EventType = ES_TIMEOUT){
-                if (ThisEvent.EventParam == TURN_1PT_TIMER){
-                    ThisEvent.EventType = SHOOTING_1PT_DONE;  
-                    CurrentState = Init;
+            
+            break;
+            
+        case Shooting:
+            if (ThisEvent.EventType == ES_TIMEOUT){
+                if ((ThisEvent.EventParam == TURN_1PT_TIMER) && !Shot_Twice){
+                    LeftWheelSpeed(0);
+                    RightWheelSpeed(0);
+                    Shot_Twice++;
+                    if (!first_run){
+                        ES_Timer_InitTimer(TURN_1PT_TIMER, FSpeed_TICKS);
+                        ES_Timer_InitTimer(BALL_RELEASE_TIMER, BALL_RELEASE_TICKS - 200);
+                        ES_Timer_InitTimer(SHOOT_TIMER, SHOOT_TICKS);
+                        Send_Ball();
+                    }
+                    else {
+                        ES_Timer_InitTimer(TURN_1PT_TIMER, FSpeed_TICKS);
+                        ES_Timer_InitTimer(BALL_RELEASE_TIMER, BALL_RELEASE_TICKS - 200);
+                        ES_Timer_InitTimer(SHOOT_TIMER, SHOOT_TICKS);
+                        Send_Ball();
+                    }
+                } 
+                else if ((ThisEvent.EventParam == TURN_1PT_TIMER) && Shot_Twice) {
+                    Shot_Twice++;
+                    ES_Timer_InitTimer(BALL_RELEASE_TIMER, BALL_RELEASE_TICKS - 100);
+                    ES_Timer_InitTimer(SHOOT_TIMER, SHOOT_TICKS);
+                    Send_Ball();
                 }
-            }            
+                
+                if (ThisEvent.EventParam == BALL_RELEASE_TIMER){
+                    Stop_Ball();
+                    //ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);
+                    //ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);
+                }
+                if (ThisEvent.EventParam == SHOOT_TIMER && (Shot_Twice == 2)){
+                    if (Side == LEFT) {
+                        ES_Timer_InitTimer(TURN_1PT_TIMER, TURNL_1PT_TICKS+40); 
+                        CurrentState = Turn_Back;
+                    }
+                    else {
+                        ES_Timer_InitTimer(TURN_1PT_TIMER, TURNR_1PT_TICKS+40);
+                        CurrentState = Turn_Back;
+                    }
+                        
+                }
+                
+            }
+            break;
+        case Turn_Back:
+            if (Side == RIGHT){
+                LeftWheelSpeed(100);
+                RightWheelSpeed(-400);
+            } 
+            else if (Side == LEFT){
+                LeftWheelSpeed(-400);
+                RightWheelSpeed(100);
+            }
+            
+            if (ThisEvent.EventType == ES_TIMEOUT){ 
+                if (ThisEvent.EventParam == TURN_1PT_TIMER){
+                   ThisEvent.EventType = SHOOTING_1PT_DONE;  
+                    CurrentState = Init;
+                    //ES_Timer_InitTimer(TURN_1PT_TIMER, TURN_1PT_TICKS);
+                }
+            }
+            Shot_Twice = 0;
             break;
             
         default: // all unhandled events pass the event back up to the next level

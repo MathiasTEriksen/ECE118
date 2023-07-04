@@ -14,16 +14,16 @@
 #include <xc.h>
 #include <stdio.h>
 
-#define BEACON PORTZ03_BIT
+#define BEACON AD_PORTW8
 
 unsigned char Beacon_Init(void){
-    
-    return IO_PortsSetPortInputs(PORTZ, PIN3);
+    AD_Init();
+    return AD_AddPins(BEACON);
     
 }
 
-unsigned char ReadBeacon(void){
-    
-    return BEACON;    
+unsigned int ReadBeacon(void){
+    //printf("Beacon Reading: %d \r\n", AD_ReadADPin(BEACON));
+    return AD_ReadADPin(BEACON);    
     
 }

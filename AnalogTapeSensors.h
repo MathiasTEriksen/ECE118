@@ -16,3 +16,6 @@ unsigned char Analog_TapeInit(void);
 
 uint16_t Analog_TapeRead_L(void);
 uint16_t Analog_TapeRead_R(void);
+
+uint16_t Analog_TapeRead_FL(void);
+uint16_t Analog_TapeRead_FR(void);

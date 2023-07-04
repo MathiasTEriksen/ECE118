@@ -8,7 +8,7 @@
 #define TURNSTILE_PIN RC_PORTY07
 
 #define MIDDLE 2000
-#define OPEN 1000
+#define OPEN 1500
 
 unsigned char TurnStile_Init(void){
     
@@ -18,13 +18,13 @@ unsigned char TurnStile_Init(void){
     
 }
 
-void Stop_Ball(void){
+void Send_Ball(void){
     
     RC_SetPulseTime(TURNSTILE_PIN, MIDDLE);
     
 }
 
-void Send_Ball(void){
+void Stop_Ball(void){
     
     RC_SetPulseTime(TURNSTILE_PIN, OPEN);
     

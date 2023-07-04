@@ -1,0 +1,5178 @@
+[DEBUG]2023-05-25 13:55:01,883: <re.Match object; span=(1118, 2294), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2023-05-25 13:55:01,883: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'FRONT_TAPE_TRIPPED', 'FRONT_TAPE_UNTRIPPED', 'BACK_TAPE_TRIPPED', 'BACK_TAPE_UNTRIPPED', 'LEFT_WALL_INRANGE', 'LEFT_WALL_FAR', 'RIGHT_WALL_FAR', 'RIGHT_WALL_INRANGE', 'BUMPER_BUMPED', 'ON_WIRE', 'OFF_WIRE', 'BEACON_PRESENT', 'BEACON_ABSENT', 'SHOOTING_1PT_DONE', 'SHOOTING_2PT_DONE', 'SHOOTING_3PT_DONE', 'NUMBEROFEVENTS']
+[DEBUG]2023-05-25 13:55:01,884: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"FRONT_TAPE_TRIPPED",
+	"FRONT_TAPE_UNTRIPPED",
+	"BACK_TAPE_TRIPPED",
+	"BACK_TAPE_UNTRIPPED",
+	"LEFT_WALL_INRANGE",
+	"LEFT_WALL_FAR",
+	"RIGHT_WALL_FAR",
+	"RIGHT_WALL_INRANGE",
+	"BUMPER_BUMPED",
+	"ON_WIRE",
+	"OFF_WIRE",
+	"BEACON_PRESENT",
+	"BEACON_ABSENT",
+	"SHOOTING_1PT_DONE",
+	"SHOOTING_2PT_DONE",
+	"SHOOTING_3PT_DONE",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,891: None
+[DEBUG]2023-05-25 13:55:01,891: None
+[DEBUG]2023-05-25 13:55:01,892: None
+[DEBUG]2023-05-25 13:55:01,892: None
+[DEBUG]2023-05-25 13:55:01,892: None
+[DEBUG]2023-05-25 13:55:01,893: None
+[DEBUG]2023-05-25 13:55:01,893: None
+[DEBUG]2023-05-25 13:55:01,893: None
+[DEBUG]2023-05-25 13:55:01,893: None
+[DEBUG]2023-05-25 13:55:01,894: None
+[DEBUG]2023-05-25 13:55:01,894: None
+[DEBUG]2023-05-25 13:55:01,894: None
+[DEBUG]2023-05-25 13:55:01,894: None
+[DEBUG]2023-05-25 13:55:01,894: None
+[DEBUG]2023-05-25 13:55:01,895: None
+[DEBUG]2023-05-25 13:55:01,895: None
+[DEBUG]2023-05-25 13:55:01,895: None
+[DEBUG]2023-05-25 13:55:01,895: None
+[DEBUG]2023-05-25 13:55:01,895: None
+[DEBUG]2023-05-25 13:55:01,895: None
+[DEBUG]2023-05-25 13:55:01,896: None
+[DEBUG]2023-05-25 13:55:01,896: None
+[DEBUG]2023-05-25 13:55:01,896: None
+[DEBUG]2023-05-25 13:55:01,896: None
+[DEBUG]2023-05-25 13:55:01,896: None
+[DEBUG]2023-05-25 13:55:01,896: None
+[DEBUG]2023-05-25 13:55:01,896: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,897: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,899: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,900: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,901: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,902: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,903: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,906: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,907: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,909: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,910: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,912: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,914: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,916: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,917: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,919: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,920: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,922: None
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,923: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,924: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,927: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,929: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,931: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,933: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,934: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,935: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,937: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,938: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:01,940: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,839: <re.Match object; span=(1118, 2294), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2023-05-25 13:55:47,839: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'FRONT_TAPE_TRIPPED', 'FRONT_TAPE_UNTRIPPED', 'BACK_TAPE_TRIPPED', 'BACK_TAPE_UNTRIPPED', 'LEFT_WALL_INRANGE', 'LEFT_WALL_FAR', 'RIGHT_WALL_FAR', 'RIGHT_WALL_INRANGE', 'BUMPER_BUMPED', 'ON_WIRE', 'OFF_WIRE', 'BEACON_PRESENT', 'BEACON_ABSENT', 'SHOOTING_1PT_DONE', 'SHOOTING_2PT_DONE', 'SHOOTING_3PT_DONE', 'NUMBEROFEVENTS']
+[DEBUG]2023-05-25 13:55:47,839: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"FRONT_TAPE_TRIPPED",
+	"FRONT_TAPE_UNTRIPPED",
+	"BACK_TAPE_TRIPPED",
+	"BACK_TAPE_UNTRIPPED",
+	"LEFT_WALL_INRANGE",
+	"LEFT_WALL_FAR",
+	"RIGHT_WALL_FAR",
+	"RIGHT_WALL_INRANGE",
+	"BUMPER_BUMPED",
+	"ON_WIRE",
+	"OFF_WIRE",
+	"BEACON_PRESENT",
+	"BEACON_ABSENT",
+	"SHOOTING_1PT_DONE",
+	"SHOOTING_2PT_DONE",
+	"SHOOTING_3PT_DONE",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,842: None
+[DEBUG]2023-05-25 13:55:47,842: None
+[DEBUG]2023-05-25 13:55:47,843: None
+[DEBUG]2023-05-25 13:55:47,843: None
+[DEBUG]2023-05-25 13:55:47,843: None
+[DEBUG]2023-05-25 13:55:47,843: None
+[DEBUG]2023-05-25 13:55:47,843: None
+[DEBUG]2023-05-25 13:55:47,843: None
+[DEBUG]2023-05-25 13:55:47,843: None
+[DEBUG]2023-05-25 13:55:47,845: None
+[DEBUG]2023-05-25 13:55:47,845: None
+[DEBUG]2023-05-25 13:55:47,845: None
+[DEBUG]2023-05-25 13:55:47,845: None
+[DEBUG]2023-05-25 13:55:47,845: None
+[DEBUG]2023-05-25 13:55:47,846: None
+[DEBUG]2023-05-25 13:55:47,846: None
+[DEBUG]2023-05-25 13:55:47,846: None
+[DEBUG]2023-05-25 13:55:47,846: None
+[DEBUG]2023-05-25 13:55:47,846: None
+[DEBUG]2023-05-25 13:55:47,846: None
+[DEBUG]2023-05-25 13:55:47,847: None
+[DEBUG]2023-05-25 13:55:47,847: None
+[DEBUG]2023-05-25 13:55:47,847: None
+[DEBUG]2023-05-25 13:55:47,847: None
+[DEBUG]2023-05-25 13:55:47,847: None
+[DEBUG]2023-05-25 13:55:47,847: None
+[DEBUG]2023-05-25 13:55:47,847: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,848: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,849: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,850: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,851: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,852: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,854: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,855: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,856: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,857: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,859: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,861: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,862: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,863: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,865: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,866: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,868: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,869: None
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,871: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,872: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,873: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,875: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,876: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,877: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,879: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,880: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,881: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,883: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,884: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:55:47,885: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,781: <re.Match object; span=(1118, 2294), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2023-05-25 13:56:26,781: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'FRONT_TAPE_TRIPPED', 'FRONT_TAPE_UNTRIPPED', 'BACK_TAPE_TRIPPED', 'BACK_TAPE_UNTRIPPED', 'LEFT_WALL_INRANGE', 'LEFT_WALL_FAR', 'RIGHT_WALL_FAR', 'RIGHT_WALL_INRANGE', 'BUMPER_BUMPED', 'ON_WIRE', 'OFF_WIRE', 'BEACON_PRESENT', 'BEACON_ABSENT', 'SHOOTING_1PT_DONE', 'SHOOTING_2PT_DONE', 'SHOOTING_3PT_DONE', 'NUMBEROFEVENTS']
+[DEBUG]2023-05-25 13:56:26,781: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"FRONT_TAPE_TRIPPED",
+	"FRONT_TAPE_UNTRIPPED",
+	"BACK_TAPE_TRIPPED",
+	"BACK_TAPE_UNTRIPPED",
+	"LEFT_WALL_INRANGE",
+	"LEFT_WALL_FAR",
+	"RIGHT_WALL_FAR",
+	"RIGHT_WALL_INRANGE",
+	"BUMPER_BUMPED",
+	"ON_WIRE",
+	"OFF_WIRE",
+	"BEACON_PRESENT",
+	"BEACON_ABSENT",
+	"SHOOTING_1PT_DONE",
+	"SHOOTING_2PT_DONE",
+	"SHOOTING_3PT_DONE",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,784: None
+[DEBUG]2023-05-25 13:56:26,784: None
+[DEBUG]2023-05-25 13:56:26,785: None
+[DEBUG]2023-05-25 13:56:26,785: None
+[DEBUG]2023-05-25 13:56:26,785: None
+[DEBUG]2023-05-25 13:56:26,786: None
+[DEBUG]2023-05-25 13:56:26,786: None
+[DEBUG]2023-05-25 13:56:26,786: None
+[DEBUG]2023-05-25 13:56:26,786: None
+[DEBUG]2023-05-25 13:56:26,787: None
+[DEBUG]2023-05-25 13:56:26,787: None
+[DEBUG]2023-05-25 13:56:26,787: None
+[DEBUG]2023-05-25 13:56:26,787: None
+[DEBUG]2023-05-25 13:56:26,787: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,788: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,790: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,791: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,792: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,793: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,794: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,796: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,797: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,799: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,800: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,801: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,802: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,804: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,805: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,806: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,808: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,809: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,811: None
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,813: <re.Match object; span=(3133, 3411), match='typedef enum {\n    Init,\n    Find_Beacon,\n    >
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,814: ['Init', 'Find_Beacon', 'Find_Wall', 'Align_Wall', 'Pivot', 'Wait_For_Tape', 'Follow_Wall', 'Test_Stop', 'Shoot_1PT', 'Go_To_2PT', 'Shoot_2PT', 'Go_To_3PT', 'Shoot_3PT']
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,815: 
+static const char *StateNames[] = {
+	"Init",
+	"Find_Beacon",
+	"Find_Wall",
+	"Align_Wall",
+	"Pivot",
+	"Wait_For_Tape",
+	"Follow_Wall",
+	"Test_Stop",
+	"Shoot_1PT",
+	"Go_To_2PT",
+	"Shoot_2PT",
+	"Go_To_3PT",
+	"Shoot_3PT",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,817: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,818: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,820: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,821: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,822: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,823: <re.Match object; span=(1744, 1842), match='typedef enum {\n    Init,\n    Move_Fwd,\n    Tur>
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,825: ['Init', 'Move_Fwd', 'Turn', 'Turn_Back']
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
+[DEBUG]2023-05-25 13:56:26,826: 
+static const char *StateNames[] = {
+	"Init",
+	"Move_Fwd",
+	"Turn",
+	"Turn_Back",
+};
+
+
