@@ -1,5 +1,5 @@
 # ECE118_Final
 
 # Link to project report:
-[View the report  here!](https://github.com/MathiasTEriksen/ECE118/blob/main/Report/Final_Report.pdf)
+[View the report  here!](file:///Users/mathias/Downloads/Final_Report.pdf)
  
